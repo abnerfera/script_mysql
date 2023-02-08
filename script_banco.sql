@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `bisaweb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `bisaweb`;
+CREATE DATABASE  IF NOT EXISTS `bisa_teste` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `bisa_teste`;
 -- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: bisaweb
+-- Host: 127.0.0.1    Database: bisa_teste
 -- ------------------------------------------------------
 -- Server version	8.0.32
 
@@ -29,6 +29,7 @@ CREATE TABLE `entradas` (
   `id_tipo_entrada` int DEFAULT NULL,
   `descricao` varchar(255) DEFAULT NULL,
   `data_hora_entrada` datetime DEFAULT NULL,
+  `valor_entrada` double DEFAULT NULL,
   PRIMARY KEY (`id_entrada`),
   KEY `fk_entrada_tipo_entrada` (`id_tipo_entrada`),
   CONSTRAINT `fk_entrada_tipo_entrada` FOREIGN KEY (`id_tipo_entrada`) REFERENCES `tipos_entradas` (`id_tipo_entrada`)
@@ -56,6 +57,7 @@ CREATE TABLE `saidas` (
   `id_tipo_saida` int DEFAULT NULL,
   `descricao` varchar(255) DEFAULT NULL,
   `data_hora_saida` datetime DEFAULT NULL,
+  `valor_saida` double DEFAULT NULL,
   PRIMARY KEY (`id_saida`),
   KEY `fk_saida_tipo_saida` (`id_tipo_saida`),
   CONSTRAINT `fk_saida_tipo_saida` FOREIGN KEY (`id_tipo_saida`) REFERENCES `tipos_saidas` (`id_tipo_saida`)
@@ -126,4 +128,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-07 11:01:23
+-- Dump completed on 2023-02-08  9:00:01
